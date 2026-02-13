@@ -1,2 +1,2 @@
 # web-home
-Home website source code.
+Source code for the "Home" website.
