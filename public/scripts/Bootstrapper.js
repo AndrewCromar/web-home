@@ -23,6 +23,7 @@ function Bootstrapper(_pageTitle, _theme) {
         <div class="navbar">
         <div><img src="../images/icons/home_icon.png" onclick="ToPage('index.html')"></div>
         <hr>
+            <div><img src="../images/icons/clock_icon.png" onclick="ToPage('school-countdown.html')"></div>
             <div><img src="../images/icons/fork_and_knife_icon.png" onclick="ToPage('recipes.html')"></div>
             <div><img src="../images/icons/focus_timer.png" onclick="ToPage('focus.html')"></div>
             <div><img src="../images/icons/luna_icon.png" onclick="ToPage('luna.html')"></div>
