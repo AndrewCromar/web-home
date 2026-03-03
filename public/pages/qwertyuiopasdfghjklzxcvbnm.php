@@ -17,8 +17,7 @@ $subject = "Andrew studied some college stuff! (" . date('Y-m-d H:i:s') . ")";
 
 $body = "Hello Scott and Catherine,\n\nAndrew has been studying and he just finished a notable section.\n\nHere is what he worked on:\n\n" . $msg . "\n\nThanks,\nAutomated Andrew";
 
-$to = 'andrewmcromar@gmail.com'; // for testing
-// $to = 'scromar@gmail.com,catcromar@gmail.com';
+$to = 'scromar@gmail.com,catcromar@gmail.com';
 $cc = 'andrewmcromar@gmail.com';
 
 if ($use_custom_from) {
