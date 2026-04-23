@@ -1,26 +1,14 @@
-<!-- ENDPOINT FOR CLAUDE TO PING WHEN FINISHING TASKS -->
-<!-- SENDS AN EMAIL NOTIFICATION TO THE ADDRESS PASSED IN THE URL -->
-
 <?php
+// Endpoint for Claude to ping when finishing tasks.
+// Sends an email notification to Andrew.
 
 $secret = 'boobs';
 $use_custom_from = true;
+$to = 'andrewmcromar@gmail.com';
 
 if (!isset($_GET['key']) || $_GET['key'] !== $secret) {
     http_response_code(403);
     exit('Forbidden');
-}
-
-if (!isset($_GET['to']) || trim($_GET['to']) === '') {
-    http_response_code(400);
-    exit('Missing "to" parameter');
-}
-
-$to = trim(urldecode($_GET['to']));
-
-if (!filter_var($to, FILTER_VALIDATE_EMAIL)) {
-    http_response_code(400);
-    exit('Invalid "to" email address');
 }
 
 $msg = isset($_GET['msg']) ? urldecode($_GET['msg']) : '(No message provided)';
