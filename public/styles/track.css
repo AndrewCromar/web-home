@@ -8,7 +8,7 @@
 .track img {
     position: absolute;
     top: 50%;
-    height: 60px;
+    width: 4rem;
     transform: translateY(-50%);
     will-change: transform;
 }
