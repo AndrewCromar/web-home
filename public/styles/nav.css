@@ -18,15 +18,7 @@
 }
 
 .nav > div {
-    width: 0.1rem;
-    height: 90%;
-
-    margin-left: 1rem;
-    margin-right: 1rem;
-
-    background-color: black;
-
-    border-radius: 0.1rem;
+    flex-grow: 1;
 }
 
 .nav > a {
