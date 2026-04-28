@@ -1,0 +1,20 @@
+.trio {
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.trio > div {
+    width: 80%;
+
+    overflow-x: hidden;
+}
+
+.trio > div:first-child,
+.trio > div:last-child {
+    width: 10%;
+}
