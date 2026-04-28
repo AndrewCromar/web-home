@@ -5,7 +5,7 @@
     overflow: hidden;
 }
 
-.track img {
+.track > img {
     position: absolute;
     top: 50%;
     width: 4rem;
