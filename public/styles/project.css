@@ -26,11 +26,13 @@
     line-height: normal;
 }
 
-.project > div:first-child > p:nth-child(1) {
+.project > div:nth-child(1) > p:nth-child(1),
+.project > div:nth-child(1) > p:nth-child(3) {
     text-align: right;
 }
 
-.project > div:last-child > p:nth-child(1) {
+.project > div:nth-child(2) > p:nth-child(1),
+.project > div:nth-child(2) > p:nth-child(3) {
     text-align: left;
 }
 
@@ -41,4 +43,8 @@
 .project > div > p:nth-child(1) {
     font-weight: bold;
     font-size: 3rem;
+}
+
+.project > div > p:nth-child(3) {
+    font-size: 2rem;
 }
