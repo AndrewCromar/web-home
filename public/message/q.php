@@ -1,36 +1,34 @@
 <?php
+$correct_password = "iloveyou";
+
+$access_granted = false;
+$error_message = "";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $password = "iloveyou";
-    $input_password = $_POST['password'] ?? '';
-    $type = strtolower($_POST['type'] ?? '');
+    $user_input = $_POST['password'] ?? '';
 
-    if (strtolower($input_password) === $password) {
-        if ($type === "dad") {
-            header("Location: dad.php");
-            exit; // Stop executing the script after redirect
-        } elseif ($type === "mom") {
-            header("Location: mom.php");
-            exit;
-        } else {
-            echo "<p>Unknown user.</p>";
-        }
+    if ($user_input === $correct_password) {
+        $access_granted = true;
     } else {
-        echo "<p>Incorrect password!</p>";
+        $error_message = "Incorrect password. Please try again.";
     }
-} else {
-?>
-    <form method="post" action="">
-        <label>What is the password? </label>
-        <input type="password" name="password" required><br><br>
-
-        <label>Are you dad or mom? </label>
-        <select name="type">
-            <option value="dad">Dad</option>
-            <option value="mom">Mom</option>
-        </select><br><br>
-
-        <input type="submit" value="Submit">
-    </form>
-<?php
 }
 ?>
+
+<?php if ($access_granted): ?>
+    
+    letter goes here
+
+<?php else: ?>
+    
+    <h2>Enter Password to Read the Letter</h2>
+    <form method="POST" action="">
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="submit" value="Unlock">
+    </form>
+    
+    <?php if ($error_message): ?>
+        <p class="error"><?php echo $error_message; ?></p>
+    <?php endif; ?>
+
+<?php endif; ?>
