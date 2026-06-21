@@ -1,16 +1,16 @@
 <?php
-// Check if the form has been submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = "iloveyou";
     $input_password = $_POST['password'] ?? '';
     $type = strtolower($_POST['type'] ?? '');
 
-    // Check password
     if (strtolower($input_password) === $password) {
         if ($type === "dad") {
-            echo "<p>Dad Message</p>";
+            header("Location: dad.php");
+            exit; // Stop executing the script after redirect
         } elseif ($type === "mom") {
-            echo "<p>Mom Message</p>";
+            header("Location: mom.php");
+            exit;
         } else {
             echo "<p>Unknown user.</p>";
         }
@@ -18,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<p>Incorrect password!</p>";
     }
 } else {
-    // If the form hasn't been submitted, show the HTML form
 ?>
     <form method="post" action="">
         <label>What is the password? </label>
